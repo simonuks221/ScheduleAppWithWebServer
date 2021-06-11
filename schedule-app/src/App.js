@@ -1,9 +1,10 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
+import Header from './components/Header.js'
 
 function App() {
   return (
     <div className="App">
-      <h1 className = 'text-dark'>Hello</h1>
+      <Header/>
     </div>
   );
 }
