@@ -5,6 +5,13 @@ const app = express()
 
 const workbook = XLSX.readFile('datasheet.xlsx')
 
+//Middleware
+const logger = (req, res, next) => {
+    console.log('Request with: ', req.originalUrl)
+    next()
+}
+app.use(logger)
+
 let worksheets = {}
 const getExelData = () => {
     //titleSheet = workbook.SheetNames.find(sheet => 'TitleSheet')
@@ -13,7 +20,6 @@ const getExelData = () => {
         if(sheetName !== 'TitleSheet'){
             worksheet = XLSX.utils.sheet_to_json(workbook.Sheets[sheetName])
             foundSheet = titleSheet.find(a => a.Title === sheetName)
-            console.log(foundSheet)
             foundSheet.Times = worksheet
         }
     }

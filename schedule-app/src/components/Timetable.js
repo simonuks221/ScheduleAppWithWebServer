@@ -7,7 +7,7 @@ const Timetable = ({timetablePart}) => {
             <div className = 'row py-5 px-3 h-100'>
                 <div className = 'card col-2'>
                     <div className = 'card-body'>
-                        <h2 className = 'card-title'>{timetablePart.Name}</h2>
+                        <h2 className = 'card-title'>{timetablePart.Title}</h2>
                         <p className = 'card-text'> {timetablePart.Description}</p>
                     </div>
                 </div>

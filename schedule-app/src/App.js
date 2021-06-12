@@ -6,18 +6,49 @@ import TimetableNav from './components/TimetableNav.js'
 
 import {useState, useEffect} from 'react'
 
+import config from './config.js'
+
 function App() {
 
   const [timetable, setTimetable] = useState([])
   const [currentIndex, setCurrentIndex] = useState(1)
 
   useEffect(() => {
-    const newTime = {ID: 1, Name: 'To Klaipėda', Description: 'A ferry to Klaipėda from Smiltynė', Times: [{ID: 1, TimeHours: 6, TimeMinutes: 20}, {ID: 1, TimeHours: 7, TimeMinutes: '00'}]}
-    const newTime2 = {ID: 2, Name: 'To Smiltynė', Description: 'A ferry to Smiltynė from Klaipėda', Times: [{ID: 1, TimeHours: 6, TimeMinutes: 20}]}
-    setCurrentIndex(1)
-    setTimetable(times => [...times, newTime, newTime2])
-    console.log("Start", newTime)
+      const getDataFromServer = async () =>{
+        const dataFromServer = await fetchTimetable()
+        setCurrentIndex(1)
+        setTimetable(dataFromServer)
+      }
+  
+      getDataFromServer()
+    //const newTime = {ID: 1, Name: 'To Klaipėda', Description: 'A ferry to Klaipėda from Smiltynė', Times: [{ID: 1, TimeHours: 6, TimeMinutes: 20}, {ID: 1, TimeHours: 7, TimeMinutes: '00'}]}
+    //const newTime2 = {ID: 2, Name: 'To Smiltynė', Description: 'A ferry to Smiltynė from Klaipėda', Times: [{ID: 1, TimeHours: 6, TimeMinutes: 20}]}
+    
+    //const newData = await GetTimetableFromServer()
+    //Change this
+    //setCurrentIndex(1)
+    //setTimetable(newData)
+    //setTimetable(times => [...times, newTime, newTime2])
   }, [])
+
+  const fetchTimetable = async () => {
+    try{
+      const address = 'http://' + config.MY_IP + ':5000/api/timetable'
+      console.log(address)
+      const res = await fetch(address)
+    if(res.ok){
+      console.log(res)
+      const json = await res.json()
+      return json
+    }else{
+      throw new Error(res.status)
+    }
+  }
+  catch (err){
+    console.log(err)
+    return
+  }
+  }
 
   const ChangeCurrentTimetable = (newID) => {
     setCurrentIndex(parseInt(newID))
@@ -27,10 +58,9 @@ function App() {
   return (
     <div className="App">
       <Header/>
-      <TimetableNav timetable = {timetable} changeTimetable = {ChangeCurrentTimetable} currentIndex = {currentIndex}/>
+      {timetable? <TimetableNav timetable = {timetable} changeTimetable = {ChangeCurrentTimetable} currentIndex = {currentIndex}/>: ''}
       <div className = 'container-fluid bg-primary'>
-        {timetable.find((part) => part.ID === currentIndex)? <Timetable timetablePart = {timetable.find((part) => part.ID === currentIndex)}/>: ''}
-        
+        {timetable? timetable.find((part) => part.ID === currentIndex)? <Timetable timetablePart = {timetable.find((part) => part.ID === currentIndex)}/>: '': ''}
       </div>
       <Footer/>
     </div>
