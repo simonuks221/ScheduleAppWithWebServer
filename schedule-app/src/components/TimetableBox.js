@@ -5,9 +5,9 @@ const TimetableBox = ({timeData}) => {
     }
 
     return (
-        <div className = 'card'>
-            <div className = 'card-body bg-secondary'>
-                <h3 className = 'text-dark bg-secondary'>{getTimeText()}</h3>
+        <div className = 'card rounded border-white mb-1'>
+            <div className = 'card-body'>
+                <h3 className = 'text-dark'>{getTimeText()}</h3>
             </div>
         </div>
     )
