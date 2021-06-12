@@ -1,0 +1,20 @@
+.destination {
+    overflow: hidden;
+    padding-left: 0px;
+    border: 3px solid #dee2e6 !important;
+}
+
+.destination img{
+    width: 500px;
+    height: 100%;
+}
+
+.timeBox{
+    border: 3px solid #dee2e6 !important;
+    width: 6rem;
+    height: 4rem;
+}
+
+.timeBoxBody{
+    padding: 0.9rem !important;
+}
