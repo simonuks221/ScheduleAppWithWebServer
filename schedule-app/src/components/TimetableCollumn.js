@@ -1,10 +1,11 @@
 import TimetableBox from './TimetableBox'
 
-const TimetableCollumn = ({timetable}) => {
+const TimetableCollumn = ({timetablePart}) => {
+    //{timetablePart.Times.map((timeData) => <TimetableBox timeData = {timeData}/>)}
+    
     return (
         <div className = 'w-50'>
-            {timetable.map((timeData) => <TimetableBox timeData = {timeData}/>)}
-            {timetable.map((timeData) => <TimetableBox timeData = {timeData}/>)}
+            {timetablePart.map((timeData) => <TimetableBox timeData = {timeData}/>)}
         </div>
     )
 }
