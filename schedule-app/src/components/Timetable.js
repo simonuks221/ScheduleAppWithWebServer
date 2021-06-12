@@ -8,7 +8,7 @@ const Timetable = ({timetablePart}) => {
                 <div className = 'card col-2 destination'>
                     <img className = 'card-img' src = {process.env.PUBLIC_URL + timetablePart.backgroundImage}/>
                     <div className = 'card-img-overlay'>
-                        <h2 className = 'card-title text-light'>{timetablePart.Title}</h2>
+                        <h4 className = 'card-title text-light'>{timetablePart.Title}</h4>
                         <p className = 'card-text text-light'> {timetablePart.Description}</p>
                     </div>
                 </div>

@@ -1,3 +1,7 @@
+body {
+    font-family: 'Poppins', sans-serif !important;
+}
+
 .destination {
     overflow: hidden;
     padding-left: 0px;
@@ -9,6 +13,10 @@
     height: 100%;
 }
 
+.destination h4{
+    font-weight: 650;
+}
+
 .timeBox{
     border: 3px solid #dee2e6 !important;
     width: 6rem;
@@ -17,4 +25,8 @@
 
 .timeBoxBody{
     padding: 0.9rem !important;
+}
+
+.headerStyle h1{
+    font-weight: 650;
 }
