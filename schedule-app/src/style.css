@@ -1,5 +1,9 @@
 body {
     font-family: 'Poppins', sans-serif !important;
+    background-color: #f5fcff;
+}
+body h1{
+    font-size: 3rem;
 }
 
 .destination {
@@ -26,11 +30,15 @@ body {
 
 .timeBoxBody{
     padding: 0.9rem !important;
-    background-color: rgba(0,123,255, 0.5);
+    background-color: rgba(0,123,255, 0.2);
 }
 
 .headerStyle h1{
     font-weight: 650;
+}
+
+.timeNav ol{
+    background-color: #cee9fc;
 }
 
 .timetable{
