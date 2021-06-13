@@ -10,8 +10,10 @@ const Timetable = ({timetablePart}) => {
     const maxMoveY = 50
     const offsetX = -50
     const offsetY = -50
-
     const backgroundImage = './background.jpg'
+
+    //Set the number 1 lower than of that you want
+    const timeBoxesPerCollumn = 5
 
     const mouseMovement = (e) => {
         const mouseX = e.clientX - imgRef.current.offsetLeft;
@@ -23,18 +25,43 @@ const Timetable = ({timetablePart}) => {
         changeBPos(locX + 'px ' + locY + 'px')
     }
 
+    const setupCollumns = () => {
+        const allCollumns = []
+        var i
+        var tempTimes = [timetablePart.Times[0]]
+        for(i = 1; i < timetablePart.Times.length; i++){
+            tempTimes.push(timetablePart.Times[i])
+            console.log(timetablePart.Times[i])
+            if(i % timeBoxesPerCollumn === 0){
+                console.log('snap', i)
+                allCollumns.push(<TimetableCollumn times = {tempTimes}/>)
+                tempTimes = []
+            }
+            else if(i === timetablePart.Times.length -1){
+                allCollumns.push(<TimetableCollumn times = {tempTimes}/>)
+                console.log('yra')
+            }
+        }
+
+        return allCollumns;
+    }
+
     return (
-        <div className = 'flex-fill bg-primary rounded timetable' ref = {imgRef} style = {{'backgroundPosition': BPos, 'backgroundImage': `url(${backgroundImage})`}} onMouseMove = {mouseMovement}>
+        <div className = 'flex-fill rounded timetable' ref = {imgRef} style = {{'backgroundPosition': BPos, 'backgroundImage': `url(${backgroundImage})`}} onMouseMove = {mouseMovement}>
             <div className = 'row py-5 mx-3 h-100'>
-                <div className = 'card col-2 destination'>
+                <div className = 'card col-md-2 destination mb-2'>
                     <img className = 'card-img' src = {process.env.PUBLIC_URL + timetablePart.backgroundImage} alt = ''/>
                     <div className = 'card-img-overlay'>
                         <h2 className = 'card-title text-light'>{timetablePart.Title}</h2>
                         <p className = 'card-text text-light'> {timetablePart.Description}</p>
                     </div>
                 </div>
-                <div className = 'col-10'>
-                    <TimetableCollumn timetablePart = {timetablePart.Times}/>
+                <div className = 'col-md-10'>
+                    <div className = 'container'>
+                        <div className = 'row'>
+                            {setupCollumns()}
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

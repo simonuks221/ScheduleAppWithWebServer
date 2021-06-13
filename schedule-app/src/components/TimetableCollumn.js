@@ -1,11 +1,10 @@
 import TimetableBox from './TimetableBox'
 
-const TimetableCollumn = ({timetablePart}) => {
-    //{timetablePart.Times.map((timeData) => <TimetableBox timeData = {timeData}/>)}
-    
+const TimetableCollumn = ({times}) => {
+
     return (
-        <div className = 'flex-fill'>
-            {timetablePart.map((timeData) => <TimetableBox key = {timeData.ID} timeData = {timeData}/>)}
+        <div className = 'collumn'>
+            {times.map((timeData) => <TimetableBox key = {timeData.ID} timeData = {timeData}/>)}
         </div>
     )
 }

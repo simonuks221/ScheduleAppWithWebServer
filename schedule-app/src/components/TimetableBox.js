@@ -5,7 +5,7 @@ const TimetableBox = ({timeData}) => {
     }
 
     return (
-        <div className = 'card rounded timeBox mb-1'>
+        <div className = 'card rounded timeBox mb-1 mr-1'>
             <div className = 'card-body timeBoxBody'>
                 <h4 className = 'text-light text-center'>{getTimeText()}</h4>
             </div>
