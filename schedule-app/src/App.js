@@ -30,7 +30,7 @@ function App() {
   }, [])
 
   const setMockupData = () => {
-    const newTime = {ID: 1, Title: 'To Klaipėda', backgroundImage: './klaipeda.webp', Description: 'A ferry to Klaipėda from Smiltynė', Times: [{ID: 1, TimeHours: 6, TimeMinutes: 20}, {ID: 1, TimeHours: 7, TimeMinutes: '00'}]}
+    const newTime = {ID: 1, Title: 'To Klaipėda', backgroundImage: './klaipeda.webp', Description: 'A ferry to Klaipėda from Smiltynė', Times: [{ID: 1, TimeHours: 6, TimeMinutes: 20}, {ID: 2, TimeHours: 7, TimeMinutes: '00'}]}
     const newTime2 = {ID: 2, Title: 'To Smiltynė', backgroundImage: './smiltyne.jpg', Description: 'A ferry to Smiltynė from Klaipėda', Times: [{ID: 1, TimeHours: 6, TimeMinutes: 20}]}
     setCurrentIndex(1)
     setTimetable(times => [newTime, newTime2])
@@ -62,7 +62,7 @@ function App() {
     <div className="App">
       <Header/>
       {timetable? <TimetableNav timetable = {timetable} changeTimetable = {ChangeCurrentTimetable} currentIndex = {currentIndex}/>: ''}
-      <div className = 'container-fluid bg-primary'>
+      <div className = 'container-fluid'>
         {timetable? timetable.find((part) => part.ID === currentIndex)? <Timetable timetablePart = {timetable.find((part) => part.ID === currentIndex)}/>: '': ''}
       </div>
       <Footer/>

@@ -5,7 +5,7 @@ const TimetableCollumn = ({timetablePart}) => {
     
     return (
         <div className = 'flex-fill'>
-            {timetablePart.map((timeData) => <TimetableBox timeData = {timeData}/>)}
+            {timetablePart.map((timeData) => <TimetableBox key = {timeData.ID} timeData = {timeData}/>)}
         </div>
     )
 }

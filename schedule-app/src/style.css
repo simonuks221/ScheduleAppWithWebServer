@@ -5,7 +5,7 @@ body {
 .destination {
     overflow: hidden;
     padding-left: 0px;
-    border: 3px solid #dee2e6 !important;
+    border: 4px solid #ffffff !important;
 }
 
 .destination img{
@@ -13,20 +13,27 @@ body {
     height: 100%;
 }
 
-.destination h4{
-    font-weight: 650;
+.destination h2{
+    font-weight: 850;
 }
 
 .timeBox{
-    border: 3px solid #dee2e6 !important;
+    border: 4.5px solid #ffffff !important;
     width: 6rem;
     height: 4rem;
+    background-color: transparent;
 }
 
 .timeBoxBody{
     padding: 0.9rem !important;
+    background-color: rgba(0,123,255, 0.5);
 }
 
 .headerStyle h1{
     font-weight: 650;
+}
+
+.timetable{
+    height: 30rem;
+    background-size: 120% 120%;
 }

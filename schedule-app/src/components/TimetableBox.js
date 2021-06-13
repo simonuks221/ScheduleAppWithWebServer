@@ -6,7 +6,7 @@ const TimetableBox = ({timeData}) => {
 
     return (
         <div className = 'card rounded timeBox mb-1'>
-            <div className = 'card-body bg-primary timeBoxBody'>
+            <div className = 'card-body timeBoxBody'>
                 <h4 className = 'text-light text-center'>{getTimeText()}</h4>
             </div>
         </div>

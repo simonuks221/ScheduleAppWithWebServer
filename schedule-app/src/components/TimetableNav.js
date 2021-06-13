@@ -4,7 +4,7 @@ const TimetableNav = ({timetable, changeTimetable, currentIndex}) => {
     return (
         <nav aria-label = 'breadcrumb'>
             <ol className = 'breadcrumb'>
-                {timetable.map((timeData) => <TimetableNavPart timeData = {timeData} changeTimetable = {changeTimetable} currentIndex = {currentIndex}/>)}
+                {timetable.map((timeData) => <TimetableNavPart key = {timeData.ID} timeData = {timeData} changeTimetable = {changeTimetable} currentIndex = {currentIndex}/>)}
             </ol>
         </nav>
     )
