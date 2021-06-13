@@ -13,7 +13,7 @@ const Timetable = ({timetablePart}) => {
     const backgroundImage = './background.jpg'
 
     //Set the number 1 lower than of that you want
-    const timeBoxesPerCollumn = 5
+    const timeBoxesPerCollumn = 4
 
     const mouseMovement = (e) => {
         const mouseX = e.clientX - imgRef.current.offsetLeft;
@@ -26,21 +26,17 @@ const Timetable = ({timetablePart}) => {
     }
 
     const setupCollumns = () => {
-        console.log(timetablePart.Times.length)
         const allCollumns = []
         var i
         var tempTimes = []
         for(i = 0; i < timetablePart.Times.length; i++){
             tempTimes.push(timetablePart.Times[i])
-            console.log(timetablePart.Times[i])
             if(i % timeBoxesPerCollumn === 0 && i !== 0){
-                console.log('snap', i)
-                allCollumns.push(<TimetableCollumn times = {tempTimes}/>)
+                allCollumns.push(<TimetableCollumn key = {i} times = {tempTimes}/>)
                 tempTimes = []
             }
             else if(i === timetablePart.Times.length -1){
-                allCollumns.push(<TimetableCollumn times = {tempTimes}/>)
-                console.log('yra')
+                allCollumns.push(<TimetableCollumn key = {i} times = {tempTimes}/>)
             }
         }
 

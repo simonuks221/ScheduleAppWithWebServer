@@ -33,8 +33,24 @@ body h1{
     background-color: rgba(0,123,255, 0.2);
 }
 
-.headerStyle h1{
+.headerStyle {
+    background-color: #3d9de2;
+}
+
+.headerStyle a{
+    text-decoration: none;
+}
+
+.headerStyle div{
+    align-items: center;
+}
+
+.headerStyle .logoText{
     font-weight: 650;
+}
+
+.headerStyle .button{
+    color: #6c757d;
 }
 
 .timeNav ol{

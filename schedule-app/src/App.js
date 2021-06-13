@@ -1,12 +1,13 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
+import './style.css'
 import Header from './components/Header.js'
 import Footer from './components/Footer.js'
 import Timetable from './components/Timetable.js'
 import TimetableNav from './components/TimetableNav.js'
-
-import './style.css'
+import About from './components/About.js'
 
 import {useState, useEffect} from 'react'
+import {BrowserRouter as Router, Route} from 'react-router-dom'
 
 import config from './config.js'
 
@@ -58,14 +59,21 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <Header/>
-      {timetable? <TimetableNav timetable = {timetable} changeTimetable = {ChangeCurrentTimetable} currentIndex = {currentIndex}/>: ''}
-      <div className = 'container-fluid'>
-        {timetable? timetable.find((part) => part.ID === currentIndex)? <Timetable timetablePart = {timetable.find((part) => part.ID === currentIndex)}/>: '': ''}
+    <Router>
+      <div className="App">
+        <Header/>
+        <Route path = '/about' component = {About}/>
+        <Route path = '/' exact render = {(props) => (
+          <>
+            {timetable? <TimetableNav timetable = {timetable} changeTimetable = {ChangeCurrentTimetable} currentIndex = {currentIndex}/>: ''}
+            <div className = 'container-fluid'>
+              {timetable? timetable.find((part) => part.ID === currentIndex)? <Timetable timetablePart = {timetable.find((part) => part.ID === currentIndex)}/>: '': ''}
+            </div>
+          </>
+        )}/>
+        <Footer/>
       </div>
-      <Footer/>
-    </div>
+    </Router>
   );
 }
 
