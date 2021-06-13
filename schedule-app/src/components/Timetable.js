@@ -26,13 +26,14 @@ const Timetable = ({timetablePart}) => {
     }
 
     const setupCollumns = () => {
+        console.log(timetablePart.Times.length)
         const allCollumns = []
         var i
-        var tempTimes = [timetablePart.Times[0]]
-        for(i = 1; i < timetablePart.Times.length; i++){
+        var tempTimes = []
+        for(i = 0; i < timetablePart.Times.length; i++){
             tempTimes.push(timetablePart.Times[i])
             console.log(timetablePart.Times[i])
-            if(i % timeBoxesPerCollumn === 0){
+            if(i % timeBoxesPerCollumn === 0 && i !== 0){
                 console.log('snap', i)
                 allCollumns.push(<TimetableCollumn times = {tempTimes}/>)
                 tempTimes = []
