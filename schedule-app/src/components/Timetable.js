@@ -46,14 +46,14 @@ const Timetable = ({timetablePart}) => {
     return (
         <div className = 'flex-fill rounded timetable' ref = {imgRef} style = {{'backgroundPosition': BPos, 'backgroundImage': `url(${backgroundImage})`}} onMouseMove = {mouseMovement}>
             <div className = 'row py-5 mx-3 h-100'>
-                <div className = 'card col-md-2 destination mb-2'>
+                <div className = 'card col-md-3 destination mb-2'>
                     <img className = 'card-img' src = {process.env.PUBLIC_URL + timetablePart.backgroundImage} alt = ''/>
-                    <div className = 'card-img-overlay'>
+                    <div className = 'card-img-overlay '>
                         <h2 className = 'card-title text-light'>{timetablePart.Title}</h2>
                         <p className = 'card-text text-light'> {timetablePart.Description}</p>
                     </div>
                 </div>
-                <div className = 'col-md-10'>
+                <div className = 'col-md-9'>
                     <div className = 'container'>
                         <div className = 'row'>
                             {setupCollumns()}

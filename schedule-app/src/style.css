@@ -73,6 +73,11 @@ body h1{
     background-size: 120% 120%;
 }
 
+.timetable img{
+    width: 110%;
+    object-fit: cover;
+}
+
 .pricing{
     background-color: #cee9fc !important;
 }

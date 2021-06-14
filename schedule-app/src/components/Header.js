@@ -2,7 +2,7 @@ import {Link} from 'react-router-dom'
 
 const Header = () => {
     return (
-        <nav className = 'navbar navbar-expand headerStyle mb-3'>
+        <nav className = 'navbar navbar-expand headerStyle mb-3 fixed-top'>
             <div className = 'container-fluid'>
                 <Link className = 'text-left navbar-brand text-dark logoText' to = '/'>Scheduler</Link>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
