@@ -2,10 +2,10 @@ import {Link} from 'react-router-dom'
 
 const Header = () => {
     return (
-        <nav className = 'navbar navbar-expand-lg headerStyle mb-3'>
-            <div className = 'd-flex flex-row'>
-                <Link className = 'navbar-brand text-dark logoText' to = '/'>Scheduler</Link>
-                <ul className = 'navbar-nav me-auto mb-2 mb-lg-0 float-left flex-row'>
+        <nav className = 'navbar navbar-expand-sm headerStyle mb-3'>
+            <div className = 'container-fluid'>
+                <Link className = 'text-left navbar-brand text-dark logoText' to = '/'>Scheduler</Link>
+                <ul className = 'navbar-nav mb-2 text-left mr-auto mb-2 mb-sm-0'>
                     <li>
                         <Link className = 'button' to = '/'>Schedule</Link>
                     </li>

@@ -14,7 +14,7 @@ const Pricing = ({pricing}) => {
     return (
         <div className = 'pricing rounded py-5 mx-3'>
             <div className = 'container-fluid row'>
-                <div className = 'col-md-2'>
+                <div className = 'col-md-2 pb-5'>
                     <div className = 'mx-2'>
                         <h2>Price text</h2>
                         <p>Description of prices on the right side</p>

@@ -41,12 +41,22 @@ body h1{
     text-decoration: none;
 }
 
+.headerStyle ul{
+    padding-top: .3125rem;
+    
+}
+
+.headerStyle li{
+    padding-bottom: 0.5rem;
+}
+
 .headerStyle div{
     align-items: center;
 }
 
 .headerStyle .logoText{
     font-weight: 650;
+    padding-bottom: 0.5rem;
 }
 
 .headerStyle .button{
